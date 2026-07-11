@@ -89,7 +89,7 @@ const translations = {
     
     contact_title: "Prêt à digitaliser votre activité ?",
     contact_desc: "Contactez-nous sur WhatsApp pour une estimation rapide et gratuite. Réponse sous 2h max (heures locales).",
-    footer_text: "© 2025 <strong>Evodevs Team</strong> — Basé à Yaoundé. L'Excellence digitale pour l'Afrique."
+    footer_text: "© 2026 <strong>Evodevs Team</strong> — Basé à Ngaoundéré, Cameroun. L'Excellence digitale pour l'Afrique."
   },
   en: {
     lang_label: "FR",
@@ -181,7 +181,7 @@ const translations = {
     
     contact_title: "Ready to digitalize your business?",
     contact_desc: "Contact us on WhatsApp for a quick and free estimate. Response within 2 hours max (local time).",
-    footer_text: "© 2025 <strong>Evodevs Team</strong> — Based in Yaoundé. Digital excellence for Africa."
+    footer_text: "© 2026 <strong>Evodevs Team</strong> — Based in Ngaoundéré, Cameroun. Digital excellence for Africa."
   }
 };
 
