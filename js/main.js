@@ -2,7 +2,7 @@ const translations = {
   fr: {
     lang_label: "EN",
     nav_cta: "Démarrer un projet →",
-    hero_eyebrow: "Collectif Tech de Référence — Yaoundé, Cameroun",
+    hero_eyebrow: "Collectif Tech de Référence — Ngaoundéré, Cameroun",
     hero_title: "Digitalisons<br />l'Afrique de <em>demain</em><br />aujourd'hui.",
     hero_sub: "Du petit commerçant à l'entreprise en croissance — Evodevs construit ce dont l'Afrique digitale a besoin : vitrines, boutiques et Mini Apps Telegram adaptées à vos réalités.",
     btn_primary: "Nos services ↓",
@@ -94,7 +94,7 @@ const translations = {
   en: {
     lang_label: "FR",
     nav_cta: "Start a project →",
-    hero_eyebrow: "Premier Tech Collective — Yaoundé, Cameroon",
+    hero_eyebrow: "Premier Tech Collective — Ngaoundéré, Cameroon",
     hero_title: "Building<br />Africa's digital <em>tomorrow</em><br />today.",
     hero_sub: "From local merchants to growing businesses — Evodevs builds what digital Africa needs: fast websites, shops, and Telegram Mini Apps tailored to your reality.",
     btn_primary: "Our services ↓",
