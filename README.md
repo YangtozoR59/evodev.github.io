@@ -71,7 +71,7 @@ Le site est alors disponible sur `http://localhost:8000`.
 ## Déploiement
 
 Le site est déployé automatiquement via **GitHub Pages** depuis la branche `main`, à l'adresse :
-`https://yangtozor59.github.io/evodev.github.io/`
+`https://evodevstore.netlify.app`
 
 ## Roadmap
 
