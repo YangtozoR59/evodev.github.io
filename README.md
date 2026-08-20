@@ -2,11 +2,11 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/GitHub%20Pages-deployed-222222?logo=github&logoColor=white" alt="GitHub Pages">
+  <img src="https://img.shields.io/badge/Performance-Optimized-22c55e" alt="Performance">
   <img src="https://img.shields.io/github/license/YangtozoR59/evodev.github.io" alt="License">
 </p>
 
-<h1 align="center">Evodevs Team — Site vitrine</h1>
+<h1 align="center">Evodevs Team — Agence Digitale & Solutions Web</h1>
 
 <p align="center">
   Site vitrine officiel du collectif de développeurs <strong>Evodevs Team</strong>, basé à Ngaoundéré, Cameroun.
@@ -14,86 +14,66 @@
 
 ---
 
-## À propos
+## 🌟 À propos
 
-Ce dépôt contient le code source du site vitrine d'**Evodevs Team**, un collectif de développeurs proposant des sites web, des Mini Apps Telegram et des services de branding pour les PME et particuliers en Afrique. Le site présente l'offre de services, les tarifs, le portfolio et les moyens de contact du collectif.
+**Evodevs Team** est un collectif tech spécialisé dans la création de solutions digitales à forte valeur ajoutée :
+- **Sites vitrines & corporate** haute performance et responsive
+- **Telegram Mini Apps** et boutiques e-commerce intégrées
+- **Bots d'automatisation Telegram** et intégrations de messagerie
+- **Identité visuelle, logos vectoriels et branding**
 
-Le site est bilingue (français / anglais) et pensé pour le contexte local : optimisé pour les connexions lentes, avec des points de contact adaptés (WhatsApp, Mobile Money).
+Le site est optimisé pour les réseaux locaux (chargement ultra-rapide < 1.5s, économie de données mobiles), bilingue (Français / Anglais) et connecté aux canaux de paiement populaires (Mobile Money, Orange Money, virement bancaire).
 
-## Fonctionnalités
+---
 
-- Présentation des services et de la grille tarifaire (FCFA / USD)
-- Section portfolio des réalisations
-- Présentation du processus de collaboration
-- FAQ
-- Bascule de langue français / anglais (`data-i18n`)
-- Contact direct via WhatsApp et e-mail
-- Site 100 % statique, léger et rapide à charger
+## 🚀 Fonctionnalités Clés
 
-## Stack technique
+- 🌐 **Navigation Fluide & Responsive** : Conçue pour une consultation parfaite sur mobile, tablette et desktop.
+- 💰 **Grille Tarifaire Rééquilibrée** : Packages clairs (Site Vitrine, Multi-pages Pro, Mini App Telegram, Branding, Bots, Maintenance).
+- 📱 **Formulaire de Devis Interactif** : Génération instantanée de messages formatés sur WhatsApp et contact direct par e-mail.
+- 🎨 **Design System Professionnel** : Icônes vectorielles SVG soignées, typographies modernes (*Syne* & *DM Sans*), micro-interactions fluides.
+- 🌍 **Support Bilingue (FR / EN)** : Bascule dynamique sans rechargement de page.
+- ⚡ **Performance & Zéro Dépendance** : 100% pur Vanilla HTML5/CSS3/JS, sans framework lourd.
 
-| Domaine | Technologies |
-|---|---|
-| Structure | HTML5 |
-| Style | CSS3 |
-| Interactivité | JavaScript (vanilla, sans framework) |
-| Hébergement | GitHub Pages |
+---
 
-## Structure du projet
+## 📁 Structure du Projet
 
 ```
 evodev.github.io/
-├── index.html      # Page unique du site (sections : hero, Afrique, services, portfolio, process, FAQ, contact)
+├── index.html          # Page d'accueil complète (Hero, Atouts, Services, Portfolio, Process, FAQ, Contact)
 ├── css/
-│   └── style.css   # Styles du site
+│   └── style.css       # Design system, variables CSS, composants et responsive
 ├── js/
-│   └── main.js     # Logique d'interaction et traductions (fr/en)
-└── logo.jpg        # Logo Evodevs Team
+│   └── main.js         # Gestion du bilinguisme (FR/EN), accordéon FAQ et formulaire WhatsApp
+├── logo.jpg            # Logo officiel Evodevs Team
+└── README.md           # Documentation du projet
 ```
 
-## Installation et développement local
+---
 
-Le site est entièrement statique, aucune dépendance ni build n'est nécessaire.
+## 🛠️ Lancement Local
+
+Aucune étape de compilation n'est nécessaire. Clonez simplement le dépôt et lancez un serveur statique :
 
 ```bash
+# 1. Cloner le projet
 git clone https://github.com/YangtozoR59/evodev.github.io.git
 cd evodev.github.io
-```
 
-Ouvrir simplement `index.html` dans un navigateur, ou servir le dossier avec un serveur local :
-
-```bash
+# 2. Lancer un serveur local (optionnel)
 python3 -m http.server 8000
+# ou
+npx serve .
 ```
 
-Le site est alors disponible sur `http://localhost:8000`.
+---
 
-## Déploiement
+## 👨‍💻 Auteur & Crédits
 
-Le site est déployé automatiquement via **GitHub Pages** depuis la branche `main`, à l'adresse :
-`https://evodevstore.netlify.app`
+Développé par **Evodevs Team** ([@YangtozoR59](https://github.com/YangtozoR59))  
+- WhatsApp : `+237 698 44 80 24`  
+- Telegram : `@ItzCyd`  
+- E-mail : `evodevsteam.contact@gmail.com`  
 
-## Roadmap
-
-- [ ] Nom de domaine personnalisé (CNAME)
-- [ ] Formulaire de contact fonctionnel (au-delà du lien WhatsApp/e-mail)
-- [ ] Section témoignages clients
-- [ ] Optimisation SEO et intégration d'analytics
-
-## Contribuer
-
-Les contributions sont les bienvenues. Pour proposer une amélioration :
-
-1. Forkez le projet
-2. Créez une branche (`git checkout -b feature/ma-fonctionnalite`)
-3. Commitez vos changements (`git commit -m 'Ajout de ma fonctionnalité'`)
-4. Poussez la branche (`git push origin feature/ma-fonctionnalite`)
-5. Ouvrez une Pull Request
-
-## Licence
-
-Ce projet est distribué sous licence [MIT](LICENSE).
-
-## Auteur
-
-Développé par **Caleb Yang** ([@YangtozoR59](https://github.com/YangtozoR59)) — Evodevs Team
+Licence : [MIT](LICENSE-evodev)

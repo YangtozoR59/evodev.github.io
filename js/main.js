@@ -1,241 +1,431 @@
+/**
+ * Evodevs Team — Script Principal
+ * Logique Bilingue (FR/EN), Accordéon FAQ, Formulaire de Devis & Intégration WhatsApp
+ */
+
 const translations = {
   fr: {
-    lang_label: "EN",
-    nav_cta: "Démarrer un projet →",
-    hero_eyebrow: "Collectif Tech de Référence — Ngaoundéré, Cameroun",
-    hero_title: "Digitalisons<br />l'Afrique de <em>demain</em><br />aujourd'hui.",
-    hero_sub: "Du petit commerçant à l'entreprise en croissance — Evodevs construit ce dont l'Afrique digitale a besoin : vitrines, boutiques et Mini Apps Telegram adaptées à vos réalités.",
-    btn_primary: "Nos services ↓",
-    btn_secondary: "Discutons sur WhatsApp",
-    stat_time: "48h",
+    lang_toggle_text: "EN",
+    nav_advantages: "Atouts",
+    nav_services: "Services & Tarifs",
+    nav_portfolio: "Réalisations",
+    nav_process: "Méthode",
+    nav_faq: "FAQ",
+    nav_cta: "Devis gratuit →",
+
+    // Hero
+    hero_eyebrow: "Collectif Tech Spécialisé — Cameroun & International",
+    hero_title: "Donnez vie à vos projets avec des <em>solutions web</em> rapides & sur-mesure.",
+    hero_sub: "Du commerçant indépendant à la PME en pleine croissance : nous concevons des sites vitrines haute performance, des boutiques et des Mini Apps Telegram taillées pour convertir vos prospects en clients.",
+    btn_primary: "Demander un devis gratuit",
+    btn_secondary: "Discuter sur WhatsApp",
+    stat_time: "5-7j",
     stat_time_label: "Délai moyen de livraison",
-    stat_remote: "100%",
-    stat_remote_label: "Adapté au contexte local",
-    stat_web3: "Pro",
-    stat_web3_label: "Qualité internationale",
-    
-    // Pensé pour l'Afrique
-    africa_label: "Pensé pour l'Afrique",
-    africa_title: "Des solutions qui comprennent vos défis",
-    africa_sub: "Nous connaissons le terrain. Nos outils sont conçus pour fonctionner parfaitement ici.",
-    af1_title: "Paiement Mobile Money",
-    af1_desc: "Réglez vos factures facilement via Orange Money ou MTN MoMo (FCFA), ou par virement.",
-    af2_title: "Optimisé 3G & Données",
-    af2_desc: "Nos sites sont ultra-légers pour charger rapidement même sur des connexions lentes, économisant les datas de vos clients.",
-    af3_title: "Support WhatsApp Local",
-    af3_desc: "Échangez avec nous directement sur WhatsApp, en français, sans barrière horaire (fuseau WAT).",
+    stat_speed: "< 1.5s",
+    stat_speed_label: "Temps de chargement optimisé",
+    stat_momo: "MoMo & OM",
+    stat_momo_label: "Paiement Mobile facilité",
+    stat_support: "100%",
+    stat_support_label: "Suivi & Support direct",
+
+    // Avantages
+    africa_label: "Nos Engagements",
+    africa_title: "Des solutions adaptées à vos réalités",
+    africa_sub: "Nous combinons l'expertise technique internationale avec une parfaite compréhension des besoins du marché africain.",
+    af1_title: "Paiements Locaux & Sécurisés",
+    af1_desc: "Réglez facilement par MTN Mobile Money, Orange Money (FCFA) ou par virement bancaire. Acompte transparent et solde à la validation.",
+    af2_title: "Ultra-Léger & Économie de Données",
+    af2_desc: "Nos architectures sont optimisées pour charger instantanément, même sur réseau 3G/4G instable, garantissant l'accès à tous vos visiteurs.",
+    af3_title: "Accompagnement & WhatsApp Direct",
+    af3_desc: "Un canal de communication dédié et réactif. Pas de tickets lents : nous répondons rapidement sur WhatsApp et vous formons à la livraison.",
 
     // Services
-    services_label: "Ce qu'on fait",
-    services_title: "Services & tarifs transparents",
-    services_sub: "Des livrables concrets, adaptés à votre budget, que vous soyez indépendant ou PME.",
+    services_label: "Nos Offres",
+    services_title: "Services clairs & tarifs transparents",
+    services_sub: "Des formules adaptées à votre stade de développement, avec des livrables concrets et sans frais cachés.",
+    badge_popular: "Recommandé",
+
     srv0_title: "Site Vitrine Essentiel",
-    srv0_desc: "Une page pro pour présenter votre activité, contact et WhatsApp direct. Parfait pour se lancer rapidement.",
-    srv0_price: "100 000 FCFA <span>(≈ $160)</span>",
-    srv1_title: "Landing Page Premium",
-    srv1_desc: "Site multi-sections, design avancé, formulaires, optimisé SEO. Idéal pour une campagne ou PME structurée.",
-    srv1_price: "200 000 – 350 000 FCFA <span>(≈ $330 – $600)</span>",
-    srv2_title: "Telegram Mini App",
-    srv2_desc: "Votre boutique complète dans Telegram — catalogue, commandes. Idéal pour vendre directement à votre communauté.",
-    srv2_price: "450 000 – 900 000 FCFA <span>(≈ $750 – $1 500)</span>",
+    srv0_desc: "Présentez votre activité avec élégance : 1 à 3 pages responsives, bouton WhatsApp direct, formulaire de contact et hébergement inclus 1 an.",
+    srv0_f1: "✓ Design responsive mobile & desktop",
+    srv0_f2: "✓ Intégration WhatsApp & Appel direct",
+    srv0_f3: "✓ Nom de domaine & hébergement 1 an",
+    srv0_price: "120 000 FCFA <span>(≈ $195)</span>",
+
+    srv1_title: "Site Web Pro & Catalogue",
+    srv1_desc: "Site multi-sections sur-mesure pour PME structurée : catalogue interactif de services/produits, référencement SEO et formulaires avancés.",
+    srv1_f1: "✓ Jusqu'à 6 pages sur-mesure",
+    srv1_f2: "✓ Catalogue produits / galerie dynamique",
+    srv1_f3: "✓ Référencement SEO & Google My Business",
+    srv1_price: "250 000 – 400 000 FCFA <span>(≈ $410 – $650)</span>",
+
+    srv2_title: "Telegram Mini App E-Commerce",
+    srv2_desc: "Vendez directement dans Telegram : catalogue complet, panier interactif et réception automatique des commandes sans quitter l'application.",
+    srv2_f1: "✓ Interface e-commerce moderne in-app",
+    srv2_f2: "✓ Gestion simple du catalogue",
+    srv2_f3: "✓ Alertes instantanées des commandes",
+    srv2_price: "350 000 – 650 000 FCFA <span>(≈ $570 – $1 050)</span>",
+
     srv3_title: "Identité Visuelle & Logo",
-    srv3_desc: "Un logo professionnel et une charte graphique pour crédibiliser votre marque (formats SVG & PNG).",
-    srv3_price: "À partir de 150 000 FCFA <span>(≈ $250)</span>",
-    srv4_title: "Bot Telegram / Automatisation",
-    srv4_desc: "Bots sur mesure pour gérer vos clients, envois automatiques ou support.",
-    srv4_price: "150 000 – 300 000 FCFA <span>(≈ $250 – $500)</span>",
-    srv5_title: "Maintenance & Hébergement",
-    srv5_desc: "Hébergement performant et sécurisé avec mises à jour continues pour ne jamais être en panne.",
-    srv5_price: "À partir de 25 000 FCFA <span>/ mois</span>",
+    srv3_desc: "Donnez une image forte à votre marque : logo vectoriel professionnel, palette de couleurs, typographies et déclinaisons pour réseaux sociaux.",
+    srv3_f1: "✓ Logo vectoriel (SVG, PNG, PDF)",
+    srv3_f2: "✓ Charte graphique & déclinaisons",
+    srv3_f3: "✓ 3 propositions & révisions incluses",
+    srv3_price: "60 000 – 120 000 FCFA <span>(≈ $100 – $200)</span>",
+
+    srv4_title: "Bot Telegram & Automatisation",
+    srv4_desc: "Automatisez les réponses fréquentes de vos clients, la prise de commandes simples et la diffusion de messages ciblés 24h/24.",
+    srv4_f1: "✓ Menu interactif et logique sur-mesure",
+    srv4_f2: "✓ Notification administrateur immédiate",
+    srv4_f3: "✓ Déploiement serveur sécurisé",
+    srv4_price: "100 000 – 220 000 FCFA <span>(≈ $165 – $360)</span>",
+
+    srv5_title: "Maintenance & Sérénité",
+    srv5_desc: "Gardez votre site rapide, sécurisé et à jour sans vous soucier des aspects techniques. Sauvegardes continues et assistance dédiée.",
+    srv5_f1: "✓ Hébergement Cloud haute disponibilité",
+    srv5_f2: "✓ Mises à jour & sauvegardes hebdomadaires",
+    srv5_f3: "✓ Support technique prioritaire",
+    srv5_price: "15 000 FCFA <span>/ mois</span> <small>(ou 120 000 FCFA / an)</small>",
 
     // Portfolio
-    port_label: "Notre Portfolio",
-    port_title: "Ils nous font confiance",
-    port_sub: "Découvrez quelques-uns de nos récents projets.",
-    port1_title: "Boutique Mode Telegram",
-    port1_desc: "Mini App E-commerce — Ventes multipliées par 2 en 1 mois.",
-    port2_title: "Restaurant Local",
-    port2_desc: "Site vitrine rapide avec menu digital — Commandes via WhatsApp.",
-    port3_title: "Agence de Service",
-    port3_desc: "Plateforme de réservation simple et efficace pour une agence immobilière.",
-    
-    // Témoignages
-    test1_quote: '"Ils ont compris exactement ce que je voulais. Mon site est rapide et j\'ai pu payer par Mobile Money, très pratique !"',
-    test1_author: "— Marie T., Entrepreneuse",
-    test2_quote: '"Une équipe sérieuse au Cameroun, ça fait plaisir. Le délai a été respecté et le suivi sur WhatsApp est top."',
-    test2_author: "— Paul D., Gérant de PME",
+    port_label: "Réalisations & Cas d'Usage",
+    port_title: "Des solutions concrètes en action",
+    port_sub: "Exemples de projets et d'architectures que nous déployons pour nos clients.",
+    port1_title: "Boutique de Mode — Telegram Mini App",
+    port1_desc: "Catalogue complet interactif directement accessible dans Telegram, avec panier et transmission de commande instantanée vers le vendeur.",
+    port2_title: "Restaurant & Fast-Food — Menu Digital",
+    port2_desc: "Site vitrine léger avec menu en ligne interactif, localisation géographique et redirection directe des commandes vers WhatsApp.",
+    port3_title: "Agence de Services — Vitrine Pro",
+    port3_desc: "Plateforme professionnelle présentant l'offre de service, les avis vérifiés et un formulaire dynamique de demande de devis.",
 
-    // Process
-    process_label: "Comment ça marche",
-    process_title: "Simple & sécurisé",
-    step1_title: "Contact WhatsApp",
-    step1_desc: "Échange gratuit sur vos besoins et votre budget.",
-    step2_title: "Devis & Acompte",
-    step2_desc: "Proposition claire. Acompte de 40% pour démarrer, solde à la livraison (MoMo accepté).",
-    step3_title: "Production",
-    step3_desc: "Livraison rapide (2-4 jours pour un vitrine) avec des points WhatsApp réguliers.",
-    step4_title: "Livraison & Formation",
-    step4_desc: "Mise en ligne, test final et mini-formation pour être autonome.",
+    // Témoignages
+    test1_quote: '"L\'équipe a parfaitement compris notre besoin. Le site charge en un clin d\'œil sur mobile et nos clients nous contactent directement sur WhatsApp sans friction. Le paiement par MoMo a rendu la collaboration très simple."',
+    test1_author: "Marie T.",
+    test1_role: "Fondatrice, Boutique Prêt-à-porter",
+    test2_quote: '"Délai respecté et travail très soigné. Avoir une équipe locale réactive et joignable sur WhatsApp change complètement l\'expérience par rapport aux prestataires distants. Je recommande vivement."',
+    test2_author: "Paul D.",
+    test2_role: "Directeur commercial PME",
+
+    // Méthode
+    process_label: "Notre Méthode",
+    process_title: "Une démarche simple en 4 étapes",
+    process_sub: "Transparence totale, livraisons itératives et accompagnement personnalisé à chaque phase.",
+    step1_title: "Cadrage & Devis Gratuit",
+    step1_desc: "Discussion rapide sur vos objectifs, vos contenus et votre budget. Proposition chiffrée claire sous 24h.",
+    step2_title: "Acompte & Maquettage",
+    step2_desc: "Acompte de 40% pour démarrer. Nous concevons la structure et validons ensemble le design avant développement.",
+    step3_title: "Développement & Tests",
+    step3_desc: "Intégration rapide, optimisation des temps de chargement et tests complets sur smartphones et tablettes.",
+    step4_title: "Mise en Ligne & Formation",
+    step4_desc: "Déploiement sur votre domaine, vérification finale et formation simple pour gérer vos contenus en totale autonomie.",
 
     // FAQ
     faq_label: "Questions Fréquentes",
-    faq_title: "Levons vos doutes",
-    faq1_q: "Comment se passe le paiement ? Dois-je tout payer à l'avance ?",
-    faq1_a: "Non. Nous fonctionnons avec un acompte de 40% à 50% au lancement du projet. Le solde est réglé uniquement à la livraison finale, une fois que vous êtes satisfait. Paiements via Orange/MTN Mobile Money ou virement.",
+    faq_title: "Tout ce que vous devez savoir",
+    faq1_q: "Comment se déroule le paiement ? Dois-je tout payer d'avance ?",
+    faq1_a: "Non. Nous fonctionnons avec un acompte de 40% au lancement du projet. Le solde est réglé uniquement à la livraison finale, une fois que vous avez validé le rendu. Paiements acceptés : MTN Mobile Money, Orange Money ou virement bancaire.",
     faq2_q: "Travaillez-vous avec des clients hors du Cameroun ?",
-    faq2_a: "Absolument ! Nous accompagnons des clients dans toute l'Afrique francophone et en Europe, avec des paiements adaptés et des échanges réguliers via WhatsApp ou Google Meet.",
-    faq3_q: "Et si je n'y connais rien en technique ?",
-    faq3_a: "C'est notre métier. Nous nous occupons de l'hébergement, du nom de domaine et vous expliquons tout avec des mots simples. Vous n'avez besoin d'aucune compétence technique.",
-    
+    faq2_a: "Oui, absolument ! Nous collaborons avec des clients partout en Afrique francophone et dans la diaspora (Europe, Amérique du Nord). Les échanges se font via WhatsApp, Google Meet et les paiements internationaux sont acceptés.",
+    faq3_q: "Que se passe-t-il si je n'ai aucune compétence technique ?",
+    faq3_a: "Vous n'avez besoin d'aucune compétence technique. Nous gérons l'hébergement, la configuration du nom de domaine et la mise en ligne. À la livraison, nous vous guidons pas à pas pour que vous puissiez mettre à jour vos coordonnées facilement.",
+    faq4_q: "Puis-je demander des modifications après la livraison ?",
+    faq4_a: "Oui. Tous nos forfaits incluent une période de garantie et d'ajustements mineurs offerte de 14 jours après la livraison. Pour un accompagnement sur le long terme, notre forfait de maintenance prend en charge toutes vos évolutions futures.",
+
+    // Contact & Formulaire
     contact_title: "Prêt à digitaliser votre activité ?",
-    contact_desc: "Contactez-nous sur WhatsApp pour une estimation rapide et gratuite. Réponse sous 2h max (heures locales).",
-    footer_text: "© 2026 <strong>Evodevs Team</strong> — Basé à Ngaoundéré, Cameroun. L'Excellence digitale pour l'Afrique."
+    contact_desc: "Remplissez le formulaire ci-dessous ou échangez directement avec nous sur WhatsApp pour une estimation gratuite sous 2h.",
+    f_label_name: "Votre Nom ou Entreprise *",
+    f_label_phone: "Numéro WhatsApp / Téléphone *",
+    f_label_service: "Type de projet souhaité *",
+    f_label_budget: "Budget approximatif (FCFA)",
+    f_label_msg: "Décrivez brièvement votre besoin",
+    btn_form_wa: "Envoyer sur WhatsApp (Immédiat)",
+    btn_form_mail: "Envoyer par E-mail",
+    direct_contact_title: "Ou contactez-nous directement via :",
+
+    // Footer
+    footer_desc: "Collectif de développeurs au Cameroun dédié à la création de sites web performants, d'applications modernes et d'identités digitales pour l'Afrique et le monde.",
+    footer_copy: "© 2026 <strong>Evodevs Team</strong>. Basé à Ngaoundéré, Cameroun. Tous droits réservés.",
+    f_back_top: "Haut de page ↑"
   },
+
   en: {
-    lang_label: "FR",
-    nav_cta: "Start a project →",
-    hero_eyebrow: "Premier Tech Collective — Ngaoundéré, Cameroon",
-    hero_title: "Building<br />Africa's digital <em>tomorrow</em><br />today.",
-    hero_sub: "From local merchants to growing businesses — Evodevs builds what digital Africa needs: fast websites, shops, and Telegram Mini Apps tailored to your reality.",
-    btn_primary: "Our services ↓",
-    btn_secondary: "Let's chat on WhatsApp",
-    stat_time: "48h",
+    lang_toggle_text: "FR",
+    nav_advantages: "Advantages",
+    nav_services: "Services & Pricing",
+    nav_portfolio: "Showcase",
+    nav_process: "Process",
+    nav_faq: "FAQ",
+    nav_cta: "Free Quote →",
+
+    // Hero
+    hero_eyebrow: "Specialized Tech Collective — Cameroon & Worldwide",
+    hero_title: "Bring your digital vision to life with fast & <em>tailored web solutions</em>.",
+    hero_sub: "From independent entrepreneurs to growing SMBs: we build high-performance showcase websites, online stores, and Telegram Mini Apps crafted to turn visitors into paying customers.",
+    btn_primary: "Request a Free Quote",
+    btn_secondary: "Chat on WhatsApp",
+    stat_time: "5-7 days",
     stat_time_label: "Average delivery time",
-    stat_remote: "100%",
-    stat_remote_label: "Local context ready",
-    stat_web3: "Pro",
-    stat_web3_label: "International quality",
-    
-    // Pensé pour l'Afrique
-    africa_label: "Built for Africa",
-    africa_title: "Solutions that understand your challenges",
-    africa_sub: "We know the ground. Our tools are designed to work perfectly here.",
-    af1_title: "Mobile Money Accepted",
-    af1_desc: "Easily pay your invoices via Orange Money or MTN MoMo (XAF), or international wire transfers.",
-    af2_title: "3G & Data Optimized",
-    af2_desc: "Our websites are ultra-lightweight to load blazingly fast even on slow connections, saving your users' data.",
-    af3_title: "Local WhatsApp Support",
-    af3_desc: "Chat with us directly on WhatsApp without timezone barriers (WAT timezone).",
+    stat_speed: "< 1.5s",
+    stat_speed_label: "Optimized load time",
+    stat_momo: "MoMo & OM",
+    stat_momo_label: "Mobile payment ready",
+    stat_support: "100%",
+    stat_support_label: "Dedicated support",
+
+    // Advantages
+    africa_label: "Our Commitments",
+    africa_title: "Solutions built for your reality",
+    africa_sub: "We combine world-class technical standards with an in-depth understanding of local African markets.",
+    af1_title: "Local & Secure Payments",
+    af1_desc: "Pay easily via MTN Mobile Money, Orange Money (XAF) or bank transfer. Transparent deposit and balance upon project sign-off.",
+    af2_title: "Ultra-Light & Data Saver",
+    af2_desc: "Our code is streamlined to load instantly even on 3G connections, saving your customers' mobile data bundles.",
+    af3_title: "Direct WhatsApp Support",
+    af3_desc: "Fast, human communication without bureaucratic ticketing. We answer promptly on WhatsApp and provide a handover walkthrough.",
 
     // Services
-    services_label: "What we do",
-    services_title: "Transparent services & pricing",
-    services_sub: "Concrete deliverables adapted to your budget, whether you are a freelancer or a structured SMB.",
+    services_label: "Our Offerings",
+    services_title: "Transparent services & clear pricing",
+    services_sub: "Tailored packages designed for your business stage, with clear deliverables and zero hidden fees.",
+    badge_popular: "Recommended",
+
     srv0_title: "Essential Showcase Site",
-    srv0_desc: "A pro landing page to present your business, contact info, and direct WhatsApp. Perfect for a quick start.",
-    srv0_price: "$160 <span>(≈ 100 000 XAF)</span>",
-    srv1_title: "Premium Landing Page",
-    srv1_desc: "Multi-section site, advanced design, forms, SEO optimized. Ideal for campaigns or structured businesses.",
-    srv1_price: "$330 – $600 <span>(≈ 200k – 350k XAF)</span>",
-    srv2_title: "Telegram Mini App",
-    srv2_desc: "Your full shop inside Telegram — catalog, orders. Perfect for selling directly to your community.",
-    srv2_price: "$750 – $1,500 <span>(≈ 450k – 900k XAF)</span>",
-    srv3_title: "Visual Identity & Logo",
-    srv3_desc: "A professional logo and brand guidelines to boost your brand credibility (SVG & PNG formats).",
-    srv3_price: "From $250 <span>(≈ 150 000 XAF)</span>",
-    srv4_title: "Telegram Bot / Automation",
-    srv4_desc: "Custom bots to manage clients, automated messages, or customer support.",
-    srv4_price: "$250 – $500 <span>(≈ 150k – 300k XAF)</span>",
-    srv5_title: "Maintenance & Hosting",
-    srv5_desc: "Fast and secure hosting with continuous updates so your business never goes offline.",
-    srv5_price: "From $40 <span>/ month</span>",
+    srv0_desc: "Present your business with authority: 1-3 responsive pages, direct WhatsApp integration, contact form, and 1 year hosting included.",
+    srv0_f1: "✓ Mobile & desktop responsive design",
+    srv0_f2: "✓ Direct WhatsApp & call integration",
+    srv0_f3: "✓ Domain name & 1 year hosting included",
+    srv0_price: "$195 <span>(≈ 120 000 FCFA)</span>",
+
+    srv1_title: "Pro Business Website & Catalog",
+    srv1_desc: "Custom multi-page website for growing businesses: dynamic catalog, SEO optimization, and high-converting inquiry forms.",
+    srv1_f1: "✓ Up to 6 custom designed pages",
+    srv1_f2: "✓ Product/service catalog & gallery",
+    srv1_f3: "✓ Local SEO & Google Business setup",
+    srv1_price: "$410 – $650 <span>(≈ 250k – 400k FCFA)</span>",
+
+    srv2_title: "Telegram Mini App E-Commerce",
+    srv2_desc: "Sell directly within Telegram: full in-app shopping cart, catalog browsing, and instant order routing to the seller.",
+    srv2_f1: "✓ Seamless Telegram WebApp interface",
+    srv2_f2: "✓ Easy catalog management",
+    srv2_f3: "✓ Instant order push notifications",
+    srv2_price: "$570 – $1,050 <span>(≈ 350k – 650k FCFA)</span>",
+
+    srv3_title: "Visual Identity & Brand Kit",
+    srv3_desc: "Establish a memorable brand presence: professional vector logo, color palette, typography guidelines, and social media assets.",
+    srv3_f1: "✓ Vector logo formats (SVG, PNG, PDF)",
+    srv3_f2: "✓ Brand guidelines & social covers",
+    srv3_f3: "✓ 3 unique design concepts included",
+    srv3_price: "$100 – $200 <span>(≈ 60k – 120k FCFA)</span>",
+
+    srv4_title: "Telegram Bot & Automation",
+    srv4_desc: "Automate repetitive customer queries, handle simple lead qualification, and broadcast updates 24/7.",
+    srv4_f1: "✓ Custom interactive bot menu",
+    srv4_f2: "✓ Real-time admin notifications",
+    srv4_f3: "✓ Secure server deployment",
+    srv4_price: "$165 – $360 <span>(≈ 100k – 220k FCFA)</span>",
+
+    srv5_title: "Maintenance & Peace of Mind",
+    srv5_desc: "Keep your website lightning fast, secure, and up-to-date. Continuous backups and dedicated monthly technical support.",
+    srv5_f1: "✓ High-availability cloud hosting",
+    srv5_f2: "✓ Weekly backups & security updates",
+    srv5_f3: "✓ Priority customer support",
+    srv5_price: "$25 <span>/ month</span> <small>(or $200 / year)</small>",
 
     // Portfolio
-    port_label: "Our Portfolio",
-    port_title: "They trust us",
-    port_sub: "Check out some of our recent deliveries.",
-    port1_title: "Telegram Fashion Shop",
-    port1_desc: "E-commerce Mini App — Sales doubled in 1 month.",
-    port2_title: "Local Restaurant",
-    port2_desc: "Fast showcase site with digital menu — Orders directed to WhatsApp.",
-    port3_title: "Service Agency",
-    port3_desc: "Simple and efficient booking platform for a real estate agency.",
-    
-    // Témoignages
-    test1_quote: '"They understood exactly what I wanted. My site is fast and I could pay via Mobile Money, very convenient!"',
-    test1_author: "— Marie T., Entrepreneur",
-    test2_quote: '"A reliable team in Cameroon, it feels good. The deadline was met and WhatsApp support is great."',
-    test2_author: "— Paul D., SMB Manager",
+    port_label: "Showcase & Use Cases",
+    port_title: "Real solutions in action",
+    port_sub: "Examples of architectures and digital platforms we craft for our clients.",
+    port1_title: "Fashion Boutique — Telegram Mini App",
+    port1_desc: "Interactive catalog built right into Telegram with seamless cart checkout and instant notification to sales reps.",
+    port2_title: "Restaurant & Eatery — Digital Menu",
+    port2_desc: "High-speed digital menu showcase with map location and one-tap order routing to WhatsApp.",
+    port3_title: "Service Agency — Corporate Portal",
+    port3_desc: "High-converting corporate website with verified reviews, clear service tiers, and interactive booking forms.",
+
+    // Testimonials
+    test1_quote: '"The team understood our exact needs from day one. The site loads blazingly fast on mobile and customers reach us on WhatsApp smoothly. Paying via Mobile Money was a huge plus."',
+    test1_author: "Marie T.",
+    test1_role: "Founder, Fashion Brand",
+    test2_quote: '"Deadlines were respected and the final delivery was spotless. Having a responsive local team on WhatsApp makes all the difference compared to remote freelancers. Highly recommended."',
+    test2_author: "Paul D.",
+    test2_role: "Commercial Director, SMB",
 
     // Process
-    process_label: "How it works",
-    process_title: "Simple & secure",
-    step1_title: "WhatsApp Contact",
-    step1_desc: "Free chat about your needs and budget.",
-    step2_title: "Quote & Deposit",
-    step2_desc: "Clear proposal. 40% deposit to start, balance upon delivery (MoMo accepted).",
-    step3_title: "Production",
-    step3_desc: "Fast delivery (2-4 days for a showcase) with regular WhatsApp updates.",
-    step4_title: "Delivery & Training",
-    step4_desc: "Deployment, final testing, and a mini-training to make you autonomous.",
+    process_label: "Our Process",
+    process_title: "A simple 4-step framework",
+    process_sub: "Full transparency, iterative milestones, and personalized guidance every step of the way.",
+    step1_title: "Discovery & Free Quote",
+    step1_desc: "Quick chat about your business goals, assets, and budget. Clear quote delivered within 24h.",
+    step2_title: "Deposit & Wireframing",
+    step2_desc: "40% deposit to kick off. We outline the layout and validate design prototypes before writing code.",
+    step3_title: "Development & Testing",
+    step3_desc: "Clean coding, performance optimization, and rigorous testing on actual mobile devices.",
+    step4_title: "Deployment & Handover",
+    step4_desc: "Live launch on your domain, final QA, and a guided handover training so you can manage your site.",
 
     // FAQ
     faq_label: "Frequently Asked Questions",
-    faq_title: "Clearing your doubts",
-    faq1_q: "How does payment work? Do I have to pay 100% upfront?",
-    faq1_a: "No. We work with a 40% to 50% deposit at project kick-off. The balance is paid only upon final delivery once you are satisfied. Payments via Orange/MTN Mobile Money or bank transfer.",
-    faq2_q: "Do you work with clients outside of Cameroon?",
-    faq2_a: "Absolutely! We support clients across Africa and Europe, with adapted payment methods and regular updates via WhatsApp or Google Meet.",
-    faq3_q: "What if I have no technical skills?",
-    faq3_a: "That's our job. We handle hosting, domain names, and explain everything in simple terms. You don't need any technical skills.",
-    
-    contact_title: "Ready to digitalize your business?",
-    contact_desc: "Contact us on WhatsApp for a quick and free estimate. Response within 2 hours max (local time).",
-    footer_text: "© 2026 <strong>Evodevs Team</strong> — Based in Ngaoundéré, Cameroun. Digital excellence for Africa."
+    faq_title: "Everything you need to know",
+    faq1_q: "How does payment work? Do I have to pay everything upfront?",
+    faq1_a: "No. We require a 40% deposit to initiate the project. The remaining balance is paid only upon final delivery once you are 100% satisfied. Accepted payment methods: MTN Mobile Money, Orange Money, or bank transfer.",
+    faq2_q: "Do you work with international clients?",
+    faq2_a: "Yes! We work with clients across Africa, Europe, and North America. Coordination takes place via WhatsApp, Google Meet, and international payments are accepted.",
+    faq3_q: "What if I have zero technical knowledge?",
+    faq3_a: "You don't need any technical skills. We handle hosting, domain setup, and configuration. At launch, we give you a simple walkthrough so you feel confident.",
+    faq4_q: "Can I request adjustments after launch?",
+    faq4_a: "Yes. All our packages include a 14-day warranty and minor adjustments period post-launch. For ongoing evolutions, our maintenance plan has you covered.",
+
+    // Contact & Form
+    contact_title: "Ready to elevate your digital presence?",
+    contact_desc: "Fill in the form below or message us directly on WhatsApp for a free quote within 2 hours.",
+    f_label_name: "Your Name or Company *",
+    f_label_phone: "WhatsApp Number / Phone *",
+    f_label_service: "Project Type *",
+    f_label_budget: "Estimated Budget",
+    f_label_msg: "Brief project description",
+    btn_form_wa: "Send on WhatsApp (Instant)",
+    btn_form_mail: "Send via Email",
+    direct_contact_title: "Or connect with us directly on:",
+
+    // Footer
+    footer_desc: "Cameroon-based tech collective building high-speed websites, Telegram applications, and digital identities for Africa and global businesses.",
+    footer_copy: "© 2026 <strong>Evodevs Team</strong>. Based in Ngaoundéré, Cameroon. All rights reserved.",
+    f_back_top: "Back to top ↑"
   }
 };
 
-let currentLang = localStorage.getItem('evodevsLang') || 'fr';
+let currentLang = localStorage.getItem('evodevs_lang') || 'fr';
 
-function setLanguage(lang) {
+function applyTranslations(lang) {
   if (!translations[lang]) return;
   currentLang = lang;
-  localStorage.setItem('evodevsLang', lang);
+  localStorage.setItem('evodevs_lang', lang);
   document.documentElement.lang = lang;
 
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
       el.innerHTML = translations[lang][key];
     }
   });
 
-  const langToggle = document.getElementById('lang-toggle');
-  if (langToggle) {
-    langToggle.textContent = translations[lang]['lang_label'];
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.textContent = translations[lang].lang_toggle_text;
   }
 }
 
-document.getElementById('lang-toggle').addEventListener('click', () => {
-  const newLang = currentLang === 'fr' ? 'en' : 'fr';
-  setLanguage(newLang);
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-  setLanguage(currentLang);
+  // 1. Initialisation de la langue
+  applyTranslations(currentLang);
 
-  // FAQ Accordion logic
+  const langBtn = document.getElementById('lang-toggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      const nextLang = currentLang === 'fr' ? 'en' : 'fr';
+      applyTranslations(nextLang);
+    });
+  }
+
+  // 2. Accordéon FAQ interactif & accessible
   const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-q');
-    question.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      
-      // Close all other items
-      faqItems.forEach(faq => {
-        faq.classList.remove('active');
-        if(faq.querySelector('.faq-a')) {
-           faq.querySelector('.faq-a').style.maxHeight = null;
+  faqItems.forEach((item) => {
+    const questionBtn = item.querySelector('.faq-q');
+    const answerDiv = item.querySelector('.faq-a');
+
+    if (questionBtn && answerDiv) {
+      questionBtn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+
+        // Fermer tous les autres éléments
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            const otherBtn = otherItem.querySelector('.faq-q');
+            const otherAns = otherItem.querySelector('.faq-a');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherAns) otherAns.style.maxHeight = null;
+          }
+        });
+
+        // Toggle l'élément courant
+        if (isOpen) {
+          item.classList.remove('active');
+          questionBtn.setAttribute('aria-expanded', 'false');
+          answerDiv.style.maxHeight = null;
+        } else {
+          item.classList.add('active');
+          questionBtn.setAttribute('aria-expanded', 'true');
+          answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px';
         }
       });
-
-      if (!isActive) {
-        item.classList.add('active');
-        const answer = item.querySelector('.faq-a');
-        if(answer) {
-            answer.style.maxHeight = answer.scrollHeight + "px";
-        }
-      }
-    });
+    }
   });
+
+  // 3. Gestion du Formulaire Interactif de Devis
+  const btnSendWhatsApp = document.getElementById('btn-send-whatsapp');
+  const btnSendEmail = document.getElementById('btn-send-email');
+
+  function getFormData() {
+    const name = document.getElementById('form-name').value.trim();
+    const phone = document.getElementById('form-phone').value.trim();
+    const service = document.getElementById('form-service').value;
+    const budget = document.getElementById('form-budget').value;
+    const message = document.getElementById('form-message').value.trim();
+
+    return { name, phone, service, budget, message };
+  }
+
+  function validateForm(data) {
+    if (!data.name) {
+      alert(currentLang === 'fr' ? 'Veuillez renseigner votre nom ou entreprise.' : 'Please enter your name or company.');
+      document.getElementById('form-name').focus();
+      return false;
+    }
+    if (!data.phone) {
+      alert(currentLang === 'fr' ? 'Veuillez renseigner un numéro de téléphone / WhatsApp.' : 'Please enter your phone / WhatsApp number.');
+      document.getElementById('form-phone').focus();
+      return false;
+    }
+    return true;
+  }
+
+  if (btnSendWhatsApp) {
+    btnSendWhatsApp.addEventListener('click', () => {
+      const data = getFormData();
+      if (!validateForm(data)) return;
+
+      const formattedMsg = `*Demande de Devis — Evodevs Team*\n\n` +
+        `👤 *Nom / Entreprise :* ${data.name}\n` +
+        `📞 *Contact :* ${data.phone}\n` +
+        `🚀 *Type de Projet :* ${data.service}\n` +
+        `💰 *Budget Estimé :* ${data.budget}\n` +
+        `📝 *Détails :* ${data.message || 'Non spécifié'}`;
+
+      const waUrl = `https://wa.me/237698448024?text=${encodeURIComponent(formattedMsg)}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  if (btnSendEmail) {
+    btnSendEmail.addEventListener('click', () => {
+      const data = getFormData();
+      if (!validateForm(data)) return;
+
+      const subject = encodeURIComponent(`Demande de Devis : ${data.service} - ${data.name}`);
+      const body = encodeURIComponent(
+        `Bonjour Evodevs Team,\n\n` +
+        `Je souhaite solliciter vos services pour un projet :\n\n` +
+        `- Nom / Entreprise : ${data.name}\n` +
+        `- Contact : ${data.phone}\n` +
+        `- Type de Projet : ${data.service}\n` +
+        `- Budget Estimé : ${data.budget}\n` +
+        `- Description du besoin :\n${data.message || 'Non spécifié'}\n\n` +
+        `Dans l'attente de votre retour.`
+      );
+
+      window.location.href = `mailto:evodevsteam.contact@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
 });
