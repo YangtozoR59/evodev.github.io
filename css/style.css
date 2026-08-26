@@ -240,7 +240,7 @@ body {
 }
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.65rem;
   text-decoration: none;
@@ -251,6 +251,7 @@ body {
   position: relative;
   width: 32px;
   height: 32px;
+  flex-shrink: 0;
 }
 
 .logo-img {
@@ -259,6 +260,7 @@ body {
   border-radius: var(--radius-sm);
   object-fit: cover;
   border: 1px solid var(--border-glass);
+  display: block;
 }
 
 .online-indicator {
@@ -296,9 +298,7 @@ body {
 
 .nav-link:hover { color: var(--emerald-light); }
 
-.telegram-link {
-  color: #38bdf8;
-}
+.telegram-link { color: #38bdf8; }
 .telegram-link:hover { color: #7dd3fc; }
 
 .nav-actions {
@@ -413,9 +413,7 @@ body {
   gap: 0.6rem;
 }
 
-.drawer-bot-link {
-  color: #38bdf8;
-}
+.drawer-bot-link { color: #38bdf8; }
 
 .drawer-bottom {
   display: flex;
@@ -1061,7 +1059,7 @@ body {
 
 /* ==========================================================================
    PROCESS / METHODE
-   ========================================================================== */
+   ========================================================================= */
 .process-steps-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -1324,11 +1322,11 @@ body {
 }
 
 /* ==========================================================================
-   FOOTER
+   FOOTER (CENTERED & WELL PROPORTIONED)
    ========================================================================== */
 .footer-modern {
   border-top: 1px solid var(--border-glass);
-  padding: 3rem 0 2rem;
+  padding: 3.5rem 0 2rem;
   background: #040608;
 }
 
@@ -1339,12 +1337,40 @@ body {
   text-align: center;
 }
 
+.footer-brand-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 540px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo .logo-box {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.footer-logo .brand-text {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
 .footer-bio {
-  max-width: 500px;
   color: var(--text-dim);
-  font-size: 0.85rem;
-  margin: 0.8rem 0 2rem;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  margin: 0.8rem 0 2.2rem;
+  line-height: 1.65;
 }
 
 .footer-meta {
