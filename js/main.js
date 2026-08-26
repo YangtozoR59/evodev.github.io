@@ -1,6 +1,6 @@
 /**
  * Evodevs — JavaScript Moderne, Bilingue & Animations Fluides
- * Sans Emojis, Optimisé Mobile
+ * Sans Emojis, Connexion Bi-Directionnelle Site & Bot Telegram
  */
 
 const translations = {
@@ -11,6 +11,8 @@ const translations = {
     nav_simulator: "Calculateur de Prix",
     nav_portfolio: "Nos Réalisations",
     nav_process: "Notre Méthode",
+    nav_bot: "Bot Telegram",
+    nav_bot_action: "Lancer le Bot Telegram",
     nav_faq: "Questions Fréquentes",
     nav_cta: "Devis Gratuit",
 
@@ -18,14 +20,15 @@ const translations = {
     hero_tag: "Tarifs promotionnels à -50%",
     hero_sub: "Sites vitrines sur-mesure, boutiques Telegram Mini Apps et identités visuelles d'excellence pour indépendants et entreprises.",
     btn_calc: "Simuler mon tarif",
-    btn_wa_chat: "Échanger sur WhatsApp",
+    btn_bot_hero: "Lancer le Bot Telegram",
+    btn_wa_chat: "WhatsApp Direct",
 
     // Services
     srv_badge: "Catalogue des Offres",
     srv_title: "Des solutions concrètes à tarifs transparents",
     srv_sub: "Toutes nos prestations incluent hébergement, sécurité, révisions et formation.",
     ribbon_top: "Recommandé",
-    btn_order: "Commander ce pack",
+    btn_order: "Commander",
 
     s1_name: "Site Vitrine Essentiel",
     s1_desc: "Une présence web moderne pour présenter votre activité et générer des prises de contact directes.",
@@ -89,7 +92,8 @@ const translations = {
     sim_step2: "2. Options additionnelles (optionnel) :",
     sim_est_total: "Estimation Totale :",
     sim_est_delay: "Délai estimé :",
-    sim_btn_order: "Valider cette demande sur WhatsApp",
+    sim_btn_order: "Valider sur WhatsApp",
+    sim_btn_bot: "Valider sur Telegram",
 
     // Portfolio
     port_badge: "Démonstrations",
@@ -105,7 +109,7 @@ const translations = {
     // Process
     proc_badge: "Notre Méthode",
     proc_title: "Un déroulement clair en 4 étapes",
-    proc_sub: "Des échanges directs sur WhatsApp, des délais respectés et une livraison clé en main.",
+    proc_sub: "Des échanges directs sur WhatsApp ou Telegram, des délais respectés et une livraison clé en main.",
     step1_name: "Cadrage & Devis Rapide",
     step1_text: "Échange sur vos attentes et vos objectifs. Proposition chiffrée claire sous 24h.",
     step2_name: "Acompte & Maquettage",
@@ -130,13 +134,14 @@ const translations = {
     // Contact
     c_badge: "Contact Immédiat",
     c_title: "Démarrer un Projet",
-    c_sub: "Remplissez ce formulaire express ou contactez-nous directement sur WhatsApp. Réponse garantie sous 2h.",
+    c_sub: "Remplissez ce formulaire express ou contactez-nous directement sur WhatsApp ou Telegram. Réponse garantie sous 2h.",
     f_name: "Nom ou Entreprise *",
     f_phone: "Numéro WhatsApp / Téléphone *",
     f_service: "Prestation souhaitée *",
     f_budget: "Budget indicatif",
     f_msg: "Détails du besoin",
     f_btn_wa: "Envoyer sur WhatsApp",
+    f_btn_tg: "Échanger sur Telegram",
     f_btn_mail: "Envoyer par E-mail",
     direct_title: "Coordonnées directes :",
 
@@ -153,6 +158,8 @@ const translations = {
     nav_simulator: "Price Calculator",
     nav_portfolio: "Showcase",
     nav_process: "Our Workflow",
+    nav_bot: "Telegram Bot",
+    nav_bot_action: "Launch Telegram Bot",
     nav_faq: "FAQ",
     nav_cta: "Free Quote",
 
@@ -160,14 +167,15 @@ const translations = {
     hero_tag: "Special 50% discount offers",
     hero_sub: "Tailored showcase websites, Telegram Mini Apps, and brand identities crafted for ambitious businesses.",
     btn_calc: "Estimate my price",
-    btn_wa_chat: "Chat on WhatsApp",
+    btn_bot_hero: "Launch Telegram Bot",
+    btn_wa_chat: "Direct WhatsApp",
 
     // Services
     srv_badge: "Services Catalog",
     srv_title: "Tangible solutions with clear pricing",
     srv_sub: "All packages include hosting, security patches, revisions, and training.",
     ribbon_top: "Recommended",
-    btn_order: "Order this pack",
+    btn_order: "Order",
 
     s1_name: "Essential Showcase Site",
     s1_desc: "A modern web presence to present your business and generate direct inquiries.",
@@ -231,7 +239,8 @@ const translations = {
     sim_step2: "2. Optional add-ons:",
     sim_est_total: "Estimated Total:",
     sim_est_delay: "Estimated Turnaround:",
-    sim_btn_order: "Validate this setup on WhatsApp",
+    sim_btn_order: "Confirm on WhatsApp",
+    sim_btn_bot: "Confirm on Telegram",
 
     // Portfolio
     port_badge: "Demonstrations",
@@ -247,7 +256,7 @@ const translations = {
     // Process
     proc_badge: "Our Workflow",
     proc_title: "A clear 4-step journey",
-    proc_sub: "Direct WhatsApp checkpoints, reliable turnaround, and turnkey delivery.",
+    proc_sub: "Direct WhatsApp / Telegram checkpoints, reliable turnaround, and turnkey delivery.",
     step1_name: "Discovery & Quote",
     step1_text: "Free WhatsApp chat about your business goals. Clear quote delivered within 24h.",
     step2_name: "Deposit & Wireframes",
@@ -272,13 +281,14 @@ const translations = {
     // Contact
     c_badge: "Direct Contact",
     c_title: "Start a Project",
-    c_sub: "Fill in this quick form or reach out directly on WhatsApp. Reply guaranteed within 2 hours.",
+    c_sub: "Fill in this quick form or reach out directly on WhatsApp or Telegram. Reply guaranteed within 2 hours.",
     f_name: "Name or Company *",
     f_phone: "WhatsApp / Phone Number *",
     f_service: "Desired Service *",
     f_budget: "Estimated Budget",
     f_msg: "Project Details",
     f_btn_wa: "Send on WhatsApp",
+    f_btn_tg: "Chat on Telegram",
     f_btn_mail: "Send via Email",
     direct_title: "Direct Contact:",
 
@@ -289,12 +299,12 @@ const translations = {
   }
 };
 
-let currentLang = localStorage.getItem('evodevs_lang_v4') || 'fr';
+let currentLang = localStorage.getItem('evodevs_lang_v5') || 'fr';
 
 function applyTranslations(lang) {
   if (!translations[lang]) return;
   currentLang = lang;
-  localStorage.setItem('evodevs_lang_v4', lang);
+  localStorage.setItem('evodevs_lang_v5', lang);
   document.documentElement.lang = lang;
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {

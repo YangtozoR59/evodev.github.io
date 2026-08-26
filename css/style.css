@@ -1,6 +1,7 @@
 /* ==========================================================================
    EVODEVS — MODERN, ANIMATED & EMOJI-FREE DESIGN SYSTEM
    Ultra-Fluid Animations, Clean Typography & Air Mobile Experience
+   Bi-Directional Telegram Bot & Website Connection
    ========================================================================== */
 
 *, *::before, *::after {
@@ -19,6 +20,7 @@
   --emerald-light: #34d399;
   --cyan: #06b6d4;
   --indigo: #6366f1;
+  --telegram: #229ed9;
   
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
@@ -67,7 +69,7 @@ body {
   z-index: 0;
 }
 
-/* Floating Ambient Orbs with CSS Keyframe Motion */
+/* Floating Ambient Orbs */
 .glow-orb {
   position: fixed;
   border-radius: 50%;
@@ -281,7 +283,7 @@ body {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.6rem;
 }
 
 .nav-link {
@@ -293,6 +295,11 @@ body {
 }
 
 .nav-link:hover { color: var(--emerald-light); }
+
+.telegram-link {
+  color: #38bdf8;
+}
+.telegram-link:hover { color: #7dd3fc; }
 
 .nav-actions {
   display: flex;
@@ -362,7 +369,7 @@ body {
   transform: translateY(-4px) rotate(-45deg);
 }
 
-/* Mobile Drawer (Aéré et spacieux) */
+/* Mobile Drawer */
 .mobile-drawer {
   position: fixed;
   top: 60px;
@@ -390,17 +397,24 @@ body {
 .drawer-links {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.1rem;
 }
 
 .drawer-link {
   color: var(--text-main);
   text-decoration: none;
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.drawer-bot-link {
+  color: #38bdf8;
 }
 
 .drawer-bottom {
@@ -497,7 +511,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.9rem;
   flex-wrap: wrap;
 }
 
@@ -505,8 +519,8 @@ body {
   background: linear-gradient(135deg, #10b981, #06b6d4);
   color: #03140e;
   font-weight: 800;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.8rem;
+  font-size: 0.92rem;
+  padding: 0.8rem 1.6rem;
   border-radius: var(--radius-full);
   text-decoration: none;
   display: inline-flex;
@@ -521,13 +535,36 @@ body {
   box-shadow: 0 8px 22px rgba(16, 185, 129, 0.5);
 }
 
+.btn-telegram-hero {
+  background: rgba(34, 158, 217, 0.12);
+  border: 1px solid rgba(34, 158, 217, 0.4);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.btn-telegram-hero svg { color: #38bdf8; }
+
+.btn-telegram-hero:hover {
+  background: rgba(34, 158, 217, 0.25);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+}
+
 .btn-whatsapp-hero {
   background: rgba(37, 211, 102, 0.1);
   border: 1px solid rgba(37, 211, 102, 0.35);
   color: #ffffff;
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.85rem 1.6rem;
+  font-size: 0.92rem;
+  padding: 0.8rem 1.5rem;
   border-radius: var(--radius-full);
   text-decoration: none;
   display: inline-flex;
@@ -678,16 +715,22 @@ body {
   font-weight: 700;
 }
 
+.card-btn-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .btn-order-card {
+  flex: 1.4;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--border-glass);
   color: var(--text-main);
   text-align: center;
-  padding: 0.75rem;
+  padding: 0.7rem;
   border-radius: var(--radius-full);
   text-decoration: none;
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   transition: var(--transition);
 }
 
@@ -702,6 +745,25 @@ body {
   color: #03140e;
   border: none;
   box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
+.btn-bot-sub {
+  flex: 0.8;
+  background: rgba(34, 158, 217, 0.1);
+  border: 1px solid rgba(34, 158, 217, 0.3);
+  color: #38bdf8;
+  text-align: center;
+  padding: 0.7rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: var(--transition);
+}
+
+.btn-bot-sub:hover {
+  background: rgba(34, 158, 217, 0.25);
+  border-color: #38bdf8;
 }
 
 /* ==========================================================================
@@ -816,17 +878,41 @@ body {
   font-weight: 700;
 }
 
+.result-cta-buttons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
 .btn-calc-order {
   background: linear-gradient(135deg, #10b981, #06b6d4);
   color: #03140e;
   border: none;
   font-weight: 800;
-  font-size: 0.92rem;
-  padding: 0.85rem 1.6rem;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.4rem;
   border-radius: var(--radius-full);
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
   transition: var(--transition);
+}
+
+.btn-calc-bot {
+  background: rgba(34, 158, 217, 0.15);
+  border: 1px solid rgba(34, 158, 217, 0.4);
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.3rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.btn-calc-bot:hover {
+  background: rgba(34, 158, 217, 0.3);
 }
 
 /* ==========================================================================
@@ -1140,21 +1226,21 @@ body {
 
 .form-btn-actions {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
   margin-top: 1.2rem;
 }
 
 .btn-action-wa {
   flex: 1.2;
-  min-width: 220px;
+  min-width: 180px;
   background: #25d366;
   color: #04100c;
   border: none;
   border-radius: var(--radius-full);
-  padding: 0.85rem 1.4rem;
+  padding: 0.8rem 1.2rem;
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1164,16 +1250,34 @@ body {
   transition: var(--transition);
 }
 
+.btn-action-tg {
+  flex: 1.2;
+  min-width: 180px;
+  background: #229ed9;
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  padding: 0.8rem 1.2rem;
+  font-weight: 800;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(34, 158, 217, 0.35);
+  transition: var(--transition);
+}
+
 .btn-action-mail {
   flex: 0.8;
-  min-width: 160px;
+  min-width: 140px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-glass);
   color: var(--text-main);
   border-radius: var(--radius-full);
-  padding: 0.85rem 1.4rem;
+  padding: 0.8rem 1.2rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1309,7 +1413,7 @@ body {
   .hero-subtitle { font-size: 0.95rem; margin-bottom: 1.8rem; }
   
   .hero-buttons { flex-direction: column; width: 100%; }
-  .btn-gradient-primary, .btn-whatsapp-hero { width: 100%; justify-content: center; }
+  .btn-gradient-primary, .btn-telegram-hero, .btn-whatsapp-hero { width: 100%; justify-content: center; }
   
   .cards-grid { grid-template-columns: 1fr; }
   .service-box { padding: 1.5rem 1.25rem; }
@@ -1317,12 +1421,13 @@ body {
   .simulator-wrapper { padding: 1.6rem 1.1rem; }
   .sim-options-grid, .sim-checkboxes-grid { grid-template-columns: 1fr; }
   .sim-result-box { flex-direction: column; text-align: center; padding: 1.2rem; }
-  .btn-calc-order { width: 100%; }
+  .result-cta-buttons { width: 100%; flex-direction: column; }
+  .btn-calc-order, .btn-calc-bot { width: 100%; justify-content: center; }
   
   .contact-main-card { padding: 1.6rem 1.1rem; }
   .form-row-2 { grid-template-columns: 1fr; gap: 0; }
   .form-btn-actions { flex-direction: column; }
-  .btn-action-wa, .btn-action-mail { width: 100%; }
+  .btn-action-wa, .btn-action-tg, .btn-action-mail { width: 100%; }
   
   .footer-meta { flex-direction: column; text-align: center; }
 }
